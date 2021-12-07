@@ -1,0 +1,26 @@
+<app-card class="card">
+  <ng-template #header>
+    <span>
+      <h2>Portal do admininstrador</h2>
+      <h5>Seja bem vindo!</h5>
+    </span>
+  </ng-template>
+
+  <ng-template #body>
+    <form class="d-flex flex-column">
+      <div class="mb-3">
+        <label class="form-label" for="login">login</label>
+        <input class="form-control disabled" type="text" name="login" id="login" 
+        placeholder="Login" disabled>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="senha">senha</label>
+        <input class="form-control disabled" type="password" name="senha" id="senha" 
+        placeholder="Senha" disabled>
+      </div>
+     
+        <button class="btn btn-primary disabled" disabled>Login</button>
+     
+      </form>
+  </ng-template>
+</app-card>

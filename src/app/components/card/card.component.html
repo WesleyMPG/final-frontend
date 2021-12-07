@@ -1,0 +1,16 @@
+<div class="card">
+  <div #headerWrapper class="card-header d-flex align-items-center justify-content-start">
+    <ng-container class="card-title" [ngTemplateOutlet]="headerRef">
+    </ng-container>
+  </div>
+
+  <div class="card-body">
+    <ng-container [ngTemplateOutlet]="bodyRef"></ng-container>
+  </div>
+
+  <div *ngIf="footerRef" class="card-footer mx-3 mb-3">
+    <div #footerWrapper class="d-flex justify-content-start">
+      <ng-container [ngTemplateOutlet]="footerRef"></ng-container>
+    </div>
+  </div>
+</div>

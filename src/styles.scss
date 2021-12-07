@@ -1,1 +1,124 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons";
+
+$bg-body: #7D7C7A;
+$bg-header:  #12082D;
+
+
+body {
+    background-color: $bg-body;
+}
+
+.header {
+    background-color: $bg-header;
+}
+
+#logo {
+    width: 40px;
+}
+
+#avatar{
+    width: 1.5rem;
+}
+
+/*-- sidebar --*/
+#sidebar {
+    width: 220px;
+    height: 91vh;
+    padding: 8px;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.2s;
+}
+
+#sidebar-header h3 {
+    margin: auto 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#sidebar-header a {
+    visibility: hidden;
+}
+
+#sidebarShowBtn {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transition: 0.2s;
+}
+
+#aba{
+    width: 1.5rem; 
+}
+/*--// sidebar --*/
+
+
+.bg-light-blue {
+    background-color: #363E60;
+}
+
+.bg-light-gray {
+    background-color: #c0c0c0;
+}
+
+.list-group-item-active, 
+.list-group-item-active:hover,
+.list-group-item-active:visited {
+    background-color: #363e607e ;
+    color: #fff;
+}
+
+.fiscal-items {
+    border: 1px solid rgba(0,0,0,.125);
+    margin: 5px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.table-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+
+    #sidebarShowBtn {
+        visibility: visible;
+    }
+
+    #sidebar {
+        position:absolute;
+        left: -220px;
+    }
+
+    #sidebar-header a {
+        visibility: visible;
+    }
+}
+
+
+/* sobrescreve bootstrap */
+
+.accordion-button:not(.collapsed) {
+    background-color: #e0e0f0;
+    color: #12082D;
+}
+
+.list-group-item {
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.list-group-item:last-child {
+    border-bottom: 0;
+}
+
+
+.card-header {
+    font-size: 1.3rem;
+}

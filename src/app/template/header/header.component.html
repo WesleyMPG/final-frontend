@@ -1,0 +1,42 @@
+<header class="header">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark-blue show">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img id="logo" src="/assets/logo.png" alt="LOGO" class="d-inline-block">
+        Sumé Software
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+        aria-expanded="false" aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a *ngFor="let page of pages;" class="nav-link" routerLink="{{page.url}}" 
+          [class.active]="selectedPage === page" (click)="onSelect(page)">
+            {{page.title}}
+          </a>
+          <div class="nav-item dropdown" href=#>
+            <div class="nav-link dropdown-toggle" 
+              id="avatarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false"
+            >
+              <img id="avatar" src="/assets/avatar.svg" alt="avatar">
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="avatarDropdown">
+              <li><a class="dropdown-item" href="#">
+                  <i class="bi bi-gear"></i>
+                  Configurações
+                </a></li>
+              <li><a class="dropdown-item" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                Sair
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
