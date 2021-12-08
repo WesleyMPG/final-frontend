@@ -1,0 +1,19 @@
+
+.list-group-item-active, 
+.list-group-item-active:hover,
+.list-group-item-active:visited {
+    background-color: #363e607e ;
+    color: #fff;
+}
+
+
+/* sobrescreve bootstrap */
+
+.list-group-item {
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.list-group-item:last-child {
+    border-bottom: 0;
+}

@@ -1,0 +1,19 @@
+<div class="accordion" id="sideBarAccordion">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="header-button" type="button" (click)="toggleOpen()">
+          <div class="d-flex w-100 justify-content-between">
+            <span>{{title | titlecase}}</span>
+           <i class="arrow bi bi-caret-down-fill" [@rotArrow]="open ? 'up' : 'down'"></i>
+         </div>
+      </button>
+    </h2>
+    <div id="section-{{title}}" class="accordion-collapse" [@toggleOpen]="open ? 'open' : 'closed'"
+      aria-labelledby="headingOne"
+    >
+      <div class="list-group p-1">
+        <ng-content #content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

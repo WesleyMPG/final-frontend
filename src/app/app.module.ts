@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './template/header/header.component';
+import { SidebarModule } from './sidebar/sidebar.module';
 import { IndexComponent } from './views/index/index.component';
 import { CardComponent } from './components/card/card.component';
 
@@ -18,6 +19,7 @@ import { CardComponent } from './components/card/card.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SidebarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

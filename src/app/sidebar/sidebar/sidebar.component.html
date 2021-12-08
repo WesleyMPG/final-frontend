@@ -1,0 +1,18 @@
+<aside>
+  <div #sidebar id="sidebar" class="bg-light-blue">
+    <div id="sidebar-header" class="d-flex justify-content-between my-2">
+        <h3>{{title}}</h3>
+        <a (click)="closeNav()"><i class="bi bi-x-lg"></i></a>
+    </div>
+    <nav>
+      <ul class="nav flex-column">
+        <li *ngFor="let sec of sections;" class="nav-item">
+          <ng-container [ngTemplateOutlet]="sec"></ng-container>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <a #sidebarShowBtn id="sidebarShowBtn" (click)="btnToggle()">
+    <img id="aba" src="/assets/aba.svg" alt="aba">
+  </a>
+</aside>

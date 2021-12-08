@@ -1,0 +1,52 @@
+
+
+#sidebar {
+    width: 220px;
+    height: 91vh;
+    padding: 8px;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.2s;
+}
+
+#sidebar-header h3 {
+    margin: auto 0;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#sidebar-header a {
+    visibility: hidden;
+}
+
+#sidebarShowBtn {
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transition: 0.2s;
+}
+
+#aba{
+    width: 1.5rem; 
+}
+
+
+@media screen and (max-width: 991px) {
+
+    #sidebarShowBtn {
+        visibility: visible;
+    }
+
+    #sidebar {
+        position:absolute;
+        left: -220px;
+    }
+
+    #sidebar-header a {
+        visibility: visible;
+    }
+}
