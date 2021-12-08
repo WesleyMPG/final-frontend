@@ -1,2 +1,13 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+
+<!-- Page wrapper -->
+<div class="d-flex">
+  <app-sidebar></app-sidebar>
+
+  <!--- Page content -->
+  <div class="w-100">
+    <router-outlet></router-outlet>
+  </div>
+  <!--- // Page content -->
+</div>
+<!-- // Page wrapper -->

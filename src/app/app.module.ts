@@ -7,6 +7,8 @@ import { HeaderComponent } from './template/header/header.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { IndexComponent } from './views/index/index.component';
 import { CardComponent } from './components/card/card.component';
+import { PratrimonioComponent } from './views/pratrimonio/pratrimonio.component';
+import { SidebarComponent } from './template/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { CardComponent } from './components/card/card.component';
     HeaderComponent,
     IndexComponent,
     CardComponent,
+    PratrimonioComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,

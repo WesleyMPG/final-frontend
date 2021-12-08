@@ -1,6 +1,8 @@
-.card {
+.content {
+    display: block;
     width: 500px;
     height: 55vh;
+    min-height: 350px;
     margin: 7vh auto 0 auto;
     padding: 0;
 }
