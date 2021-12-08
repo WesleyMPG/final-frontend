@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Page } from 'src/shared/Page.model';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -13,9 +14,14 @@ export class HeaderComponent implements OnInit {
                    {title: 'Patrimônio', url: '/patrimonio'}];
   selectedPage: Page = this.pages[0];
 
-  constructor() { }
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+    this.pages.forEach(page => {
+      if (this.location.path().indexOf(page.url) > -1) {
+        this.selectedPage = page;
+      }
+    });
   }
 
   onSelect(page: Page): void {
