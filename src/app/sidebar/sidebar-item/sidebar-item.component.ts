@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Location } from '@angular/common';
+import { Location, NgLocalization } from '@angular/common';
 
 
 @Component({
@@ -16,10 +16,13 @@ export class SidebarItemComponent implements OnInit {
 
   active = false;
 
-  constructor(private location: Location) { }
+  constructor(private location: Location) {
+    location.onUrlChange((url: string) => {
+      this.active = this.location.path().indexOf(this.url) > -1;
+    });
+  }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
   }
 
   ngAfterContentInit() {

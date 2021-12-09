@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sume-software';
+
+  showSidebar: boolean = false;
+
+  constructor(private location: Location) { 
+    location.onUrlChange( url => {
+      this.showSidebar = url.indexOf('/index') === -1;
+    });
+  }
 }
