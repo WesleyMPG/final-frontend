@@ -4,9 +4,15 @@
 
         <ng-template #body>
             <tb-tab-group class="cadastro-content">
-                <tb-tab title="Geral"><app-geral-tab></app-geral-tab></tb-tab>
-                <tb-tab title="Bens" [active]="true"><app-bens-tab></app-bens-tab></tb-tab>
-                <tb-tab title="Observações">obs</tb-tab>
+                <tb-tab title="Geral">
+                    <app-geral-tab></app-geral-tab>
+                </tb-tab>
+                <tb-tab title="Bens">
+                    <app-bens-tab></app-bens-tab>
+                </tb-tab>
+                <tb-tab title="Observações">
+                    <app-obs-tab></app-obs-tab>
+                </tb-tab>
             </tb-tab-group>
         </ng-template>
     </app-card>

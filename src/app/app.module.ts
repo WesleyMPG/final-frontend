@@ -20,6 +20,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { CloseBtnStyleDirective } from './components/modal/close-btn-style.directive';
 import { AddBemModalComponent } from './components/cadastro/bens-tab/add-bem-modal/add-bem-modal.component';
 import { DetailModalComponent } from './components/cadastro/bens-tab/detail-modal/detail-modal.component';
+import { ObsTabComponent } from './components/cadastro/obs-tab/obs-tab.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { DetailModalComponent } from './components/cadastro/bens-tab/detail-moda
     ModalComponent,
     CloseBtnStyleDirective,
     AddBemModalComponent,
-    DetailModalComponent
+    DetailModalComponent,
+    ObsTabComponent
   ],
   imports: [
     BrowserModule,
