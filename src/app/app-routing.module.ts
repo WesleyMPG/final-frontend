@@ -1,3 +1,4 @@
+import { CadastroComponent } from './views/cadastro/cadastro.component';
 import { IndexComponent } from './views/index/index.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,6 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/index', pathMatch: 'full' },
   { path: 'index', component: IndexComponent },
   { path: 'patrimonio', component: PratrimonioComponent },
+  { path: 'patrimonio/cadastro', component: CadastroComponent}
 ];
 
 @NgModule({

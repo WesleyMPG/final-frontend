@@ -1,0 +1,13 @@
+<main class="d-flex flex-column flex-fill p-4">
+    <app-card>
+        <ng-template #header>Cadastro de bens</ng-template>
+
+        <ng-template #body>
+            <tb-tab-group class="cadastro-content">
+                <tb-tab title="Geral"><app-geral-tab></app-geral-tab></tb-tab>
+                <tb-tab title="Bens"></tb-tab>
+                <tb-tab title="Observações">obs</tb-tab>
+            </tb-tab-group>
+        </ng-template>
+    </app-card>
+</main>
