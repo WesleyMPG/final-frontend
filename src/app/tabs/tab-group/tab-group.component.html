@@ -1,0 +1,12 @@
+<header>
+    <ul class="nav nav-tabs">
+        <li class="nav-item" *ngFor="let t of tabs">
+            <a class="nav-link" [class.active]="t.active" href="javascript:void(0)"
+            (click)="onSelect(t)">
+                {{t.title}}
+            </a>
+        </li>
+    </ul>
+</header>
+<ng-content></ng-content>
+
