@@ -1,0 +1,17 @@
+export interface Bem {
+    id: number,
+    id_item_nota_fiscal: number,
+    tombamento: string,
+    id_estado_bem: number,
+    id_situacao_uso_bem: number,
+    valor_aquisicao: number,
+    id_marca: number,
+    data_limite_garantia?: Date,
+    data_fim_garantia?: Date,
+    data_inicio_uso?: Date,
+    observacao?: string,
+    id_user_cad: number,
+    dt_cad: Date,
+    id_user_alt?: number,
+    dt_alt?: Date,
+}

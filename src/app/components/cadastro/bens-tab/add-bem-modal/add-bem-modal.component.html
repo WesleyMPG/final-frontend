@@ -1,0 +1,52 @@
+<app-modal title="Adicionar item" closeBtnStyle closeBtnText="Cancelar" 
+size="lg" [onClose]="clearFields">
+
+    <form body class="p-1" [formGroup]="form">
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="modal-qtd" class="form-label">
+            Quantidade
+          </label>
+          <input type="number" min="1" formControlName="qtd" class="form-control"
+          id="modal-qtd">
+        </div>
+        
+        <div class="col-sm-4">
+          <label for="modal-service" class="form-label">
+            Marca
+          </label>
+          <input type="text" formControlName="marca" class="form-control"
+          id="modal-service">
+        </div>
+
+        <div class="col-sm-4">
+          <label for="modal-val" class="form-label">
+            Valor unitário
+          </label>
+          <input type="number" class="form-control" id="modal-val" disabled>
+        </div>
+      </div>
+      <div class="row pt-2">
+        <div class="col-sm-6">
+          <label for="modal-inicio" class="form-label">
+            Início da garantia
+          </label>
+          <input type="date" formControlName="inicio_garantia" class="form-control"
+          id="modal-inicio">
+        </div> 
+
+        <div class="col-sm-6">
+          <label for="moda-fim" class="form-label">
+            Fim da garantia
+          </label>
+          <input type="date" formControlName="fim_garantia" class="form-control"
+          id="moda-fim">
+        </div>        
+      </div>
+      <p class="pt-1" *ngIf="!form.valid">Algumas das entradas estão inválidas.</p>
+    </form>
+  <button footer-after type="submit" class="btn btn-primary" data-bs-dismiss="modal"
+    (click)="createItem()" [disabled]="!form.valid"
+  >Adicionar</button>
+  
+</app-modal>

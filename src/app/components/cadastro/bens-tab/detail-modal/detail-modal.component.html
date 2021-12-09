@@ -1,0 +1,24 @@
+<app-modal title="Detalhes" closeBtnText="Cancelar" size="md">
+  <div body class="px-3 pt-3">
+    <dl class="row justify-content-between">
+      <dt class="col-sm-5">Marca</dt>
+      <dd class="col-sm-3">{{ detail.marca }}</dd>
+    </dl>
+
+    <dl class="row justify-content-between">
+      <dt class="col-sm-5">Estado</dt>
+      <div class="d-flex justify-content-between px-4 pt-1">
+        <dd>{{ detail.estado.estado_bem }}</dd>
+        <dd><p class="text-align-end">{{ detail.estado.descricao }}</p></dd>
+      </div>
+    </dl>
+
+    <dl class="row">
+      <dt class="col-sm-5">Situação de uso</dt>
+      <div class="d-flex justify-content-between px-4 pt-1">
+        <dd>{{ detail.situacao.situacao_bem }}</dd>
+        <dd><p class="text-align-end">{{ detail.situacao.descricao }}</p></dd>
+      </div>
+    </dl>
+  </div>
+</app-modal>

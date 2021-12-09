@@ -24,8 +24,12 @@ export class SidebarItemComponent implements OnInit {
 
   ngAfterContentInit() {
     if (this.location.path().indexOf(this.url) > -1) {
-      this.active = true;
-      this.isActive.emit(true);
+      this.activate();
     }
+  }
+
+  activate() {
+    this.active = true;
+    this.isActive.emit(true);
   }
 }
