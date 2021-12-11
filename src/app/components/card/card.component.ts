@@ -32,7 +32,6 @@ export class CardComponent implements OnInit {
 
   private _applyJustify() {
     if (this.justifyHeader !== undefined) {
-      console.log(this.headerWrapper)
       this._setJustify(this.headerWrapper, this.justifyHeader);
     }
     if (this.justifyFooter !== undefined) {

@@ -15,6 +15,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class GeralTabComponent implements OnInit {
 
   form!: FormGroup;
+  fieldNumero: string|null = null;
 
   selectedNota!: NotaFiscal;
   itemQtdVinc!: number;
@@ -23,16 +24,24 @@ export class GeralTabComponent implements OnInit {
   fornecedores: Fornecedor[] = [];
   notasFiscais: NotaFiscal[] = [];
   itensNota: ItemNotaFiscal[] = [];
+  
 
   constructor(private fornService: FornecedorService,
               private notaService: NotaFiscalService,
-              private itemService: ItemNotaService) {}
+              private itemService: ItemNotaService) {
+    this.itemService.bensSubject.subscribe(bens => {
+      const item = itemService.selectedItem;
+      this.itemQtdVinc = bens.length;
+      if (item) {
+        this.itemQtdDisp = item.qtd - this.itemQtdVinc;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this._createForm();
     this.fornService.getAll().subscribe(fornecedores => {
       this.fornecedores = fornecedores;
-      console.log(fornecedores);
     });
   }
 
@@ -44,9 +53,11 @@ export class GeralTabComponent implements OnInit {
   onChangeNota() {
     if (this.form.value.nota !== null) {
       this.selectedNota = this.form.value.nota;
-      const id = this.form.value.nota.id_nota_fiscal
       this._resetItems();
-      
+      this.notaService.selectedNota = this.selectedNota;
+      this.fieldNumero = `${this.selectedNota.ano}${this.selectedNota.numero}`
+
+      const id = this.form.value.nota.id_nota_fiscal
       this.notaService.getAllNotaItems(id).subscribe(itens => {
         this.itensNota = itens;
       });
@@ -55,13 +66,7 @@ export class GeralTabComponent implements OnInit {
 
   onChangeItem() {
     if (this.form.value.item !== null) {
-      const item = this.itemService.selectedItem = this.form.value.item;
-
-      this.itemService.getSelectedItemAllBens().subscribe(bens => {
-        this.itemQtdVinc = bens.length;
-        console.log(bens)
-        this.itemQtdDisp = item.qtd - this.itemQtdVinc;
-      });
+      this.itemService.selectedItem = this.form.value.item;
     }
   }
 
@@ -81,6 +86,7 @@ export class GeralTabComponent implements OnInit {
 
   private _resetNotas(): void {
     this._resetItems();
+    this.fieldNumero = null
     this.form.controls['nota'].reset(null);
   }
 }

@@ -8,7 +8,7 @@
     </button>
   </div>
 
-  <table class="table border border-2">
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -22,7 +22,7 @@
       <tr *ngFor="let bem of bens; let i = index;">
         <th scope="row">{{i+1}}</th>
         <td>{{bem.tombamento}}</td>
-        <td>produto</td>
+        <td>{{selectedItem.produto_servico}}</td>
         <td>{{bem.valor_aquisicao}}</td>
         <td>
           <button (click)="selectBem(bem)" class="btn btn-primary btn-sm"
@@ -32,6 +32,7 @@
         </td>
       </tr>
     </tbody>
+    <tfoot><tr></tr></tfoot>
   </table>
 </div>
 

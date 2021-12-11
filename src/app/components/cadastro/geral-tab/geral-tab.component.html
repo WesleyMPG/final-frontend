@@ -1,9 +1,9 @@
-<form class="mt-1 p-2" [formGroup]="form">
+<form class="mt-4 p-2" [formGroup]="form">
   <div class="row g-3">
     <div class="col">
       <label for="numero" class="form-label">Número</label>
       <input type="text" class="form-control" id="numero" disabled
-        placeholder="(AAAAXXXXXX)" aria-label="numero"
+        placeholder="(AAAAXXXXXX)" aria-label="numero" [value]="fieldNumero"
       >
     </div>
 

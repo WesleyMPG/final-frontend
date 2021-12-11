@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { NotaFiscal } from './../shared/NotaFiscal.model';
 import { ItemNotaFiscal } from '../shared/ItemNotaFiscal.model';
 
 @Injectable({
@@ -10,6 +11,8 @@ import { ItemNotaFiscal } from '../shared/ItemNotaFiscal.model';
 export class NotaFiscalService {
 
   baseURL = environment.API_URL + 'notas-fiscais/';
+
+  selectedNota!: NotaFiscal;
 
   constructor(private http: HttpClient) { }
 

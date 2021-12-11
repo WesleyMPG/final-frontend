@@ -32,3 +32,8 @@ body {
 .card-header {
     font-size: 1.3rem;
 }
+
+input.ng-invalid.ng-touched {
+    border-color: red;
+  }
+  

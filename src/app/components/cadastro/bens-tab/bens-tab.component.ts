@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Bem } from 'src/shared/Bem.model';
+import { ItemNotaService } from './../../../services/item-nota.service';
+import { Bem } from 'src/app/shared/Bem.model';
+import { ItemNotaFiscal } from 'src/app/shared/ItemNotaFiscal.model';
 
-
-const b = [{tombamento: 'tb1', qtd: 2, valor_aquisicao: 10}]
 
 @Component({
   selector: 'app-bens-tab',
@@ -11,15 +11,23 @@ const b = [{tombamento: 'tb1', qtd: 2, valor_aquisicao: 10}]
 })
 export class BensTabComponent implements OnInit {
 
-  bens = b;
+  bens: Bem[] = [];
+  selectedItem!: ItemNotaFiscal;
   selected?: Bem;
 
-  constructor() { }
+  constructor(private itemService: ItemNotaService) {
+      itemService.selectedItemSubject.subscribe(item => {
+          this.selectedItem = <ItemNotaFiscal>item;
+      })
+    itemService.bensSubject.subscribe(bens => {
+      this.bens = bens;
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  selectBem(bem: any) {
+  selectBem(bem: Bem) {
     this.selected = bem;
   }
 }
