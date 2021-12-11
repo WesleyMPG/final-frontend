@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Page } from 'src/shared/Page.model';
+import { Page } from 'src/app/shared/Page.model';
 import { Location } from '@angular/common';
 
 

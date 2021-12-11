@@ -1,4 +1,4 @@
-<form class="mt-1 p-2" [formGroup]="formBem">
+<form class="mt-1 p-2" [formGroup]="form">
   <div class="row g-3">
     <div class="col">
       <label for="numero" class="form-label">Número</label>
@@ -11,41 +11,58 @@
       <label for="fornecedor" class="form-label">
         Fornecedor (Razão social)
       </label>
-      <input type="text" class="form-control" id="fornecedor"
-        aria-label="fornecedor" formControlName="fornecedor"
-      >
+      <select class="form-select" id="fornecedor" formControlName="fornecedor" 
+      (change)="onChangeFornecedor()">
+        <option selected [ngValue]=null disabled >----</option>
+        <option *ngFor="let f of fornecedores" [ngValue]="f">
+        {{f.razao_social}}
+        </option>
+      </select>
     </div>
 
     <div class="col">
       <label for="nota" class="form-label">
         Nota fiscal
       </label>
-      <select class="form-select" aria-label="nota fiscal"
-        id="nota" formControlName="nota"
-      >
-        <option *ngFor="let nota of notasFiscais" [ngValue]="nota.content">
-        {{nota.title}}
+      <select class="form-select" id="nota" formControlName="nota" 
+      (change)="onChangeNota()">
+        <option selected [ngValue]=null disabled >----</option>
+        <option *ngFor="let nota of notasFiscais" [ngValue]="nota">
+        {{nota.numero}}
         </option>
       </select>
     </div>
   </div>
 
+
   <div class="row g-3 mt-1">
     <div class="col">
       <label for="nota" class="form-label">
-        Itens da nota fiscal
+        Item da nota fiscal
       </label>
-      <ul class="list-group fiscal-items">
-        <li class="list-group-item">An item</li>
-        <li class="list-group-item">A second item</li>
-        <li class="list-group-item">A third item</li>
-        <li class="list-group-item">A fourth item</li>
-        <li class="list-group-item">And a fifth one</li>
-        <li class="list-group-item">And a fifth one</li>
-        <li class="list-group-item">And a fifth one</li>
-        <li class="list-group-item">And a fifth one</li>
-        <li class="list-group-item">And a fifth one</li>
-      </ul>
+      <select class="form-select" id="nota" formControlName="item"
+      (change)="onChangeItem()">
+        <option selected [ngValue]=null disabled >----</option>
+        <option *ngFor="let item of itensNota" [ngValue]="item">
+        {{item.id_item_nota_fiscal}}
+        </option>
+      </select>
+    </div>
+
+    <div class="col">
+      <label for="qtd-vinculada" class="form-label">
+        Quantidade vinculada
+      </label>
+      <input type="number" class="form-control" id="qtd-vinculada" disabled
+        placeholder="0" [value]="itemQtdVinc">
+    </div>
+
+    <div class="col">
+      <label for="qtd-disponivel" class="form-label">
+        Quantidade disponível
+      </label>
+      <input type="number" class="form-control" id="qtd-disponivel" disabled
+        placeholder="0" [value]="itemQtdDisp">
     </div>
   </div>
 </form>
