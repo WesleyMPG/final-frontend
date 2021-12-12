@@ -1,27 +1,24 @@
 # SumeSoftware
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
+Esse projeto é o frontend do desafio final do curso de desenvovedor fullstack júnior do LCCV/UFAL.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+#### Conteúdo
 
-## Code scaffolding
+Todas os operações previstas no backlog foram implementadas, exceto e edição do Bem, mas por uma questão de tempo mesmo.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Existem dois módulos que podem ser reutilizador livremente em outros projetos: sidebar e tabs. Os componente Card e Modal também poderiam ser transformados em módulos, mas durante a criação deles ainda me faltava familiaridade com o framework, pois os adaptei do desafio prévio.
 
-## Build
+#### Estrutura de pastas (parcial)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- _app/views_ Se trata dos componentes que são acessados pelo uso do router
+- _app/template_ Componentes comuns às views
+- _app/components_ compoentes menores das views
+- _app/shared_ Contem os tipos (modelos) referentes ao que será recebido do backend.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Dificuldades
 
-## Running end-to-end tests
+A maior dificuldade de fato ocorreu no desafio anterior por ser o primeiro contato. Para esse desafio final eu ja estava mais preparado, com uma noção melhor de como fazer as coisas (básicas) ocorrerem; mas talvez não da melhor forma, ainda.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Com relação ao projeto em si, tive um pouco de dificuldado com o backlog em entender algumas partes como o tombamento do bem e a quantidade na hora de cadastrar, que não afeta em nada, pois não tem campo quantidade no modelo do bem.
