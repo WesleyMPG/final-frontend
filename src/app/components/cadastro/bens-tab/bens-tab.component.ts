@@ -1,3 +1,4 @@
+import { DetailService } from 'src/app/services/detail.service';
 import { Component, OnInit } from '@angular/core';
 import { ItemNotaService } from './../../../services/item-nota.service';
 import { Bem } from 'src/app/shared/Bem.model';
@@ -13,9 +14,9 @@ export class BensTabComponent implements OnInit {
 
   bens: Bem[] = [];
   selectedItem!: ItemNotaFiscal;
-  selected?: Bem;
 
-  constructor(private itemService: ItemNotaService) {
+  constructor(private itemService: ItemNotaService,
+              private detailService: DetailService) {
       itemService.selectedItemSubject.subscribe(item => {
           this.selectedItem = <ItemNotaFiscal>item;
       })
@@ -28,6 +29,6 @@ export class BensTabComponent implements OnInit {
   }
 
   selectBem(bem: Bem) {
-    this.selected = bem;
+    this.detailService.selectedBem = bem;
   }
 }

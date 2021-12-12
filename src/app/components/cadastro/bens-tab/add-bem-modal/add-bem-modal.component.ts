@@ -5,7 +5,7 @@ import { Bem } from 'src/app/shared/Bem.model';
 import { ItemNotaFiscal } from 'src/app/shared/ItemNotaFiscal.model';
 import { Marca } from 'src/app/shared/Marca.model';
 import { ItemNotaService } from 'src/app/services/item-nota.service';
-import { MarcaService } from 'src/app/services/marca.service';
+import { DetailService } from 'src/app/services/detail.service';
 import { NotaFiscalService } from 'src/app/services/nota-fiscal.service';
   
   
@@ -26,7 +26,7 @@ export class AddBemModalComponent implements OnInit {
 
   constructor(private notaService: NotaFiscalService,
               private itemService: ItemNotaService,
-              private marcaService: MarcaService) {
+              private detailService: DetailService) {
     itemService.selectedItemSubject.subscribe(item => {
       this.valorField = (item) ? Number(item.valor_unitario) : 0;
     });
@@ -37,7 +37,7 @@ export class AddBemModalComponent implements OnInit {
 
   ngOnInit(): void {
     this._create_form();
-    this.marcaService.getAll().subscribe(marcas => {
+    this.detailService.getAllMarcas().subscribe(marcas => {
       this.marcas = marcas;
     });
 
